@@ -15,6 +15,11 @@ export default {
       activeIndex: 0,
       userInput: ""
     };
+  },
+  methods: {
+    handleSubmit() {
+      console.log(this.userInput, "test")
+    }
   }
 }
 </script>
