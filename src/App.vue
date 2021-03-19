@@ -1,20 +1,27 @@
 <template>
   <div>
-    <Speech :word="questions[activeIndex].word" />
-    <form @submit.prevent="handleSubmit">
-      <input type="text" spellcheck="false" v-model="userInput" />
-      <button type="submit">Submit</button>
-    </form>
+    <div v-if="!testFinished">
+      <Speech :word="questions[activeIndex].word" />
+      <form @submit.prevent="handleSubmit">
+        <input type="text" spellcheck="false" v-model="userInput" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div v-else>
+      <Score :questions="questions" />
+    </div>
   </div>
 </template>
 
 <script>
 import data from "./data";
 import Speech from "./components/Speech"
+import Score from "./components/Score"
 
 export default {
   components: {
-    Speech
+    Speech,
+    Score
   },
   data() {
     return {
