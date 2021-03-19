@@ -29,6 +29,11 @@ export default {
       this.activeIndex += 1;
       this.userInput = "";
     }
+  },
+  computed: {
+    testFinished() {
+      return this.questions.every(q => q.userInput);
+    }
   }
 }
 </script>
