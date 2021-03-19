@@ -2,6 +2,7 @@
   <div>
     <div v-if="!testFinished">
       <Speech :word="questions[activeIndex].word" />
+      <p>Word {{ activeIndex + 1 }} of {{ questions.length }}</p>
       <form @submit.prevent="handleSubmit">
         <input type="text" spellcheck="false" v-model="userInput" />
         <button type="submit">Submit</button>
