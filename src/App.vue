@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Spelling Test</h1>
     <div v-if="!testFinished">
       <Speech :word="questions[activeIndex].word" />
       <p>Word {{ activeIndex + 1 }} of {{ questions.length }}</p>
